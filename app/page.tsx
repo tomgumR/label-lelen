@@ -56,13 +56,10 @@ export default function LabelLelenWebsite() {
     <div className="min-h-screen bg-[#FDFBF7] text-[#1A1A1A] font-sans overflow-x-hidden">
       
       {/* --- NAVIGATION BAR --- 
-          - Changed bg-white/10 to bg-black/20 for a darker initial tint.
-          - Changed scrolled state to a deeper parchment tint bg-[#FDFBF7]/95.
-          - Removed 'backdrop-blur' as requested.
+          - Greyish border-b removed to clean up the hero view.
       */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FDFBF7]/95 py-4 shadow-md' : 'bg-white/0 py-6 border-b border-white/5'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FDFBF7]/95 py-4 shadow-md' : 'bg-white/0 py-6'}`}>
         <div className="w-full px-[5vw] flex items-center justify-between">
-          {/* Logo color adapts to the background tint */}
           <div className={`text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight z-50 relative uppercase ${isScrolled ? 'text-[#1A1A1A]' : 'text-[#B5A482]'}`}>
             LABEL LELEN
           </div>
@@ -96,22 +93,20 @@ export default function LabelLelenWebsite() {
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img src="./h.jpg" alt="Hero" className="w-full h-full object-cover" />
-          {/* Slightly darker overlay to ensure white text is readable */}
           <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-        <div className="flex items-center justify-center space-x-6 w-full px-4 mb-[4vh]">
-          {/* The Wrapper Div ensures everything stays on one line */}
-          <h1 className="font-playfair text-[1.2vw] md:text-[1.1vw] font-bold text-white uppercase tracking-[0.3em] flex items-center whitespace-nowrap drop-shadow-2xl">
-            Ethical Mizo brand
-            <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
-            Homegrown
-            <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
-            Handcrafted
-            <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
-            Sustainable
-          </h1>
-        </div>
+          <div className="flex items-center justify-center space-x-6 w-full px-4 mb-[4vh]">
+            <h1 className="font-playfair text-[1.2vw] md:text-[1.1vw] font-bold text-white uppercase tracking-[0.3em] flex items-center whitespace-nowrap drop-shadow-2xl">
+              Ethical Mizo brand
+              <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
+              Homegrown
+              <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
+              Handcrafted
+              <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
+              Sustainable
+            </h1>
+          </div>
           <Button 
             onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })} 
             className="bg-white text-[#1A1A1A] px-[3vw] py-[2vh] text-[1.2rem] tracking-[0.2em] uppercase hover:bg-[#1A1A1A] hover:text-white transition-colors"
@@ -191,32 +186,28 @@ export default function LabelLelenWebsite() {
         </div>
       </section>
 
-
-    {/* --- FOOTER --- */}
+      {/* --- FOOTER --- */}
       <footer id="contact" className="bg-[#2C241B] text-[#F5F1E8] py-[10vh] px-[5vw]">
         <div className="grid md:grid-cols-12 gap-[5vw]">
-          {/* Brand Column */}
           <div className="md:col-span-4 space-y-8">
             <div className="text-[3vw] font-playfair font-bold uppercase">LABEL LELEN</div>
              <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md italic">
                Sustainable Mizo craftsmanship. Homegrown in Mizoram.
              </p>
              <div className="flex space-x-6 pt-4">
-               {/* Instagram Link Added, Twitter Removed */}
                <a href="https://www.instagram.com/label_lelen/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#8B7355] transition-colors">
                  <Instagram size={50} />
                </a>
                <a href="#" className="text-white hover:text-[#8B7355] transition-colors"><Facebook size={24} /></a>
-               <a href="mailto:your-email@example.com" className="text-white hover:text-[#8B7355] transition-colors"><Mail size={24} /></a>
+               <a href="mailto:labellelen@gmail.com" className="text-white hover:text-[#8B7355] transition-colors"><Mail size={24} /></a>
              </div>
           </div>
           
-          {/* Google Maps Section */}
           <div className="md:col-span-5 space-y-6">
              <h3 className="font-playfair text-[2vw]">Find Us</h3>
              <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden shadow-lg border border-white/10">
                <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.735878415259!2d92.7143230758994!3d23.721105089886295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374d9524a918d449%3A0xbc770642127903a5!2sRts%20D&#39;Decor%20Store%20-%20Aizawl%20-%20Mizoram!5e0!3m2!1sen!2sin!4v1707254000000!5m2!1sen!2sin" 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.735878415259!2d92.7143230758994!3d23.721105089886295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374d9524a918d449%3A0xbc770642127903a5!2sRts%20D'Decor%20Store%20-%20Aizawl%20-%20Mizoram!5e0!3m2!1sen!2sin!4v1707254000000!5m2!1sen!2sin" 
                  width="100%" 
                  height="100%" 
                  style={{ border: 0 }} 
@@ -227,7 +218,6 @@ export default function LabelLelenWebsite() {
              </div>
           </div>
 
-          {/* Contact Details */}
           <div className="md:col-span-3 space-y-8">
             <h3 className="font-playfair text-[2vw]">Visit Us</h3>
             <div className="space-y-4 text-[#D4C5B0] text-lg">
@@ -238,11 +228,10 @@ export default function LabelLelenWebsite() {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="mt-[10vh] pt-8 border-t border-white/10 text-center text-[#D4C5B0] text-sm tracking-widest uppercase">
-           &copy; 2026 Label Lelen. All rights reserved.
+           © 2026 Label Lelen. All rights reserved.
         </div>
       </footer>
-      </div>
+    </div>
   )
 }

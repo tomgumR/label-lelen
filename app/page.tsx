@@ -60,7 +60,7 @@ export default function LabelLelenWebsite() {
       {/* Navbar - NOW BREAKS AT XL (1280px) */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#F9F9F7]/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
         <div className="w-full px-[5vw] flex items-center justify-between">
-          <div className="text-[2.5vw] min-text-[24px] font-playfair font-bold tracking-tight text-[#1A1A1A] z-50 relative">LABEL LELEN</div>
+          <div className="text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight text-[#1A1A1A] z-50 relative">LABEL LELEN</div>
           
           {/* Desktop Menu - Changed from lg:flex to xl:flex (Hidden on small laptops/tablets now) */}
           <div className="hidden xl:flex items-center space-x-[3vw]">

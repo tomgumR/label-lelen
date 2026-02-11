@@ -191,38 +191,58 @@ export default function LabelLelenWebsite() {
         </div>
       </section>
 
-      {/* --- FOOTER --- */}
+
+    {/* --- FOOTER --- */}
       <footer id="contact" className="bg-[#2C241B] text-[#F5F1E8] py-[10vh] px-[5vw]">
         <div className="grid md:grid-cols-12 gap-[5vw]">
-          <div className="md:col-span-5 space-y-8">
+          {/* Brand Column */}
+          <div className="md:col-span-4 space-y-8">
             <div className="text-[3vw] font-playfair font-bold uppercase">LABEL LELEN</div>
-             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md italic">Sustainable Mizo craftsmanship. Homegrown in Mizoram.</p>
+             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md italic">
+               Sustainable Mizo craftsmanship. Homegrown in Mizoram.
+             </p>
+             <div className="flex space-x-6 pt-4">
+               {/* Instagram Link Added, Twitter Removed */}
+               <a href="https://www.instagram.com/label_lelen/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#8B7355] transition-colors">
+                 <Instagram size={50} />
+               </a>
+               <a href="#" className="text-white hover:text-[#8B7355] transition-colors"><Facebook size={24} /></a>
+               <a href="mailto:your-email@example.com" className="text-white hover:text-[#8B7355] transition-colors"><Mail size={24} /></a>
+             </div>
           </div>
           
-          <div className="md:col-span-4 space-y-8">
-             <h3 className="font-playfair text-[2vw]">Stay Connected</h3>
-             <div className="flex flex-col gap-6">
-               <Input type="email" placeholder="Enter your email" className="text-white border-white/20 focus:border-[#8B7355]" />
-               <Button className="bg-[#8B7355] text-white py-4 w-48 rounded-full tracking-widest uppercase text-xs hover:bg-[#9C8466]">Join the circle</Button>
+          {/* Google Maps Section */}
+          <div className="md:col-span-5 space-y-6">
+             <h3 className="font-playfair text-[2vw]">Find Us</h3>
+             <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden shadow-lg border border-white/10">
+               <iframe 
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.735878415259!2d92.7143230758994!3d23.721105089886295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374d9524a918d449%3A0xbc770642127903a5!2sRts%20D&#39;Decor%20Store%20-%20Aizawl%20-%20Mizoram!5e0!3m2!1sen!2sin!4v1707254000000!5m2!1sen!2sin" 
+                 width="100%" 
+                 height="100%" 
+                 style={{ border: 0 }} 
+                 allowFullScreen 
+                 loading="lazy" 
+                 referrerPolicy="no-referrer-when-downgrade"
+               ></iframe>
              </div>
           </div>
 
+          {/* Contact Details */}
           <div className="md:col-span-3 space-y-8">
             <h3 className="font-playfair text-[2vw]">Visit Us</h3>
             <div className="space-y-4 text-[#D4C5B0] text-lg">
-               <p>Khatla Kawn, RTS Building.</p>
-               <p>Opposite Pizza Hut. Aizawl, MZ</p>
-               <p>+91 9362223522</p>
-               <div className="flex space-x-6 pt-4">
-                 {[Instagram, Facebook, Twitter, Mail].map((Icon, i) => <a key={i} href="#" className="text-white hover:text-[#8B7355] transition-colors"><Icon size={24} /></a>)}
-               </div>
+               <p className="leading-tight">Khatla Kawn, RTS Building.</p>
+               <p className="leading-tight">Opposite Pizza Hut. Aizawl, MZ</p>
+               <p className="text-white font-medium">+91 9362223522</p>
             </div>
           </div>
         </div>
+
+        {/* Copyright */}
         <div className="mt-[10vh] pt-8 border-t border-white/10 text-center text-[#D4C5B0] text-sm tracking-widest uppercase">
            &copy; 2026 Label Lelen. All rights reserved.
         </div>
       </footer>
-    </div>
+      </div>
   )
 }

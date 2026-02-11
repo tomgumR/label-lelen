@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Instagram, Facebook, Twitter, Mail, ChevronRight } from 'lucide-react'
 
-// --- COMPONENTS ---
+// --- REUSABLE UI COMPONENTS ---
 const Button = ({ children, className, onClick }: { children: React.ReactNode; className?: string; onClick?: () => void }) => (
   <button 
     onClick={onClick} 
@@ -19,7 +19,6 @@ const Input = ({ className, ...props }: React.InputHTMLAttributes<HTMLInputEleme
     {...props} 
   />
 )
-// ------------------
 
 export default function LabelLelenWebsite() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -34,135 +33,156 @@ export default function LabelLelenWebsite() {
   }, [])
 
   const products = [
-    { id: 1, name: 'Ruby Heritage Saree', price: '₹', image: './d.jpg' },
-    { id: 2, name: 'Sunshine Elegance', price: '₹', image: './s.jpg' },
-    { id: 3, name: 'Azure Dreams Saree', price: '₹', image: './a.jpg' },
-    { id: 4, name: 'Crimson Royale', price: '₹', image: './c.jpg' },
-    { id: 5, name: 'Golden Lotus', price: '₹', image: './f.jpg' },
-    { id: 6, name: 'Emerald Tradition', price: '₹', image: './e.jpg' }
+    { id: 1, name: 'Shirt', price: '₹', image: './d.jpg' },
+    { id: 2, name: 'Shirt', price: '₹', image: './s.jpg' },
+    { id: 3, name: 'shirt', price: '₹', image: './a.jpg' },
+    { id: 4, name: 'Shirt', price: '₹', image: './c.jpg' },
+    { id: 5, name: 'Shirt', price: '₹', image: './f.jpg' },
+    { id: 6, name: 'Shirt', price: '₹', image: './e.jpg' }
   ]
 
   const lookbookImages = [
-    './b.jpg',
-    './j.jpg',
-    './i.jpg',
-    './h.jpg'
+    './b.jpg', './j.jpg', './i.jpg', './h.jpg',
+    './b.jpg', './j.jpg', './i.jpg', './h.jpg'
   ]
 
   const handleWhatsAppInquiry = (productName: string, price: string) => {
-    const message = encodeURIComponent(`Hi Label Lelen! I'm interested in the ${productName} (${price}). Could you please provide more details?`)
-    const phoneNumber = '919876543210' 
+    const message = encodeURIComponent(`Hi Label Lelen! I'm interested in the ${productName}. Could you please provide more details?`)
+    const phoneNumber = '919362223522' 
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank')
   }
 
   return (
-    <div className="min-h-screen bg-[#F9F9F7] text-[#1A1A1A] font-sans overflow-x-hidden">
-      {/* Navbar - NOW BREAKS AT XL (1280px) */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#F9F9F7]/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
+    <div className="min-h-screen bg-[#FDFBF7] text-[#1A1A1A] font-sans overflow-x-hidden">
+      
+      {/* --- NAVIGATION BAR --- 
+          - Changed bg-white/10 to bg-black/20 for a darker initial tint.
+          - Changed scrolled state to a deeper parchment tint bg-[#FDFBF7]/95.
+          - Removed 'backdrop-blur' as requested.
+      */}
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FDFBF7]/95 py-4 shadow-md' : 'bg-black/25 py-6 border-b border-white/5'}`}>
         <div className="w-full px-[5vw] flex items-center justify-between">
-          <div className="text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight text-[#1A1A1A] z-50 relative">LABEL LELEN</div>
+          {/* Logo color adapts to the background tint */}
+          <div className={`text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight z-50 relative uppercase ${isScrolled ? 'text-[#1A1A1A]' : 'text-white'}`}>
+            LABEL LELEN
+          </div>
           
-          {/* Desktop Menu - Changed from lg:flex to xl:flex (Hidden on small laptops/tablets now) */}
           <div className="hidden xl:flex items-center space-x-[3vw]">
             {['Our Story', 'Collections', 'Journal', 'Contact'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(' ', '')}`} className="text-[#1A1A1A] hover:text-[#8B7355] transition-colors text-[1vw] uppercase tracking-widest font-medium">{item}</a>
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase().replace(' ', '')}`} 
+                className={`transition-colors text-[1vw] uppercase tracking-widest font-medium ${isScrolled ? 'text-[#1A1A1A] hover:text-[#8B7355]' : 'text-white/90 hover:text-white'}`}
+              >
+                {item}
+              </a>
             ))}
           </div>
 
-          {/* Mobile Menu Button - Changed from lg:hidden to xl:hidden (Visible on small laptops/tablets now) */}
-          <button className="xl:hidden text-[#1A1A1A] z-50 relative" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className={`xl:hidden z-50 relative ${isScrolled ? 'text-[#1A1A1A]' : 'text-white'}`} onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <X size={32} /> : <Menu size={32} />}
           </button>
         </div>
 
-        {/* Mobile/Tablet Menu Overlay */}
-        <div className={`fixed inset-0 bg-[#F9F9F7] z-40 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        {/* Mobile Menu Overlay */}
+        <div className={`fixed inset-0 bg-[#FDFBF7] z-40 flex flex-col items-center justify-center space-y-8 transition-transform duration-500 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
            {['Our Story', 'Collections', 'Journal', 'Contact'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(' ', '')}`} onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-playfair hover:text-[#8B7355] transition-colors">{item}</a>
+              <a key={item} href={`#${item.toLowerCase().replace(' ', '')}`} onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-playfair">{item}</a>
             ))}
         </div>
       </nav>
 
-      {/* Hero Section - FLUID TYPOGRAPHY */}
+      {/* --- HERO SECTION --- */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
           <img src="./h.jpg" alt="Hero" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/10"></div>
+          {/* Slightly darker overlay to ensure white text is readable */}
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="font-playfair text-[2vw] leading-[0.85] font-bold text-white mb-[4vh] drop-shadow-xl w-full">
-            , <br /> •Ethical Mizo brand •Homegrown•Handcrafted•Sustainable •
+        <div className="flex items-center justify-center space-x-6 w-full px-4 mb-[4vh]">
+          {/* The Wrapper Div ensures everything stays on one line */}
+          <h1 className="font-playfair text-[1.2vw] md:text-[1.1vw] font-bold text-white uppercase tracking-[0.3em] flex items-center whitespace-nowrap drop-shadow-2xl">
+            Ethical Mizo brand
+            <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
+            Homegrown
+            <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
+            Handcrafted
+            <span className="inline-block w-[3vw] h-[1px] bg-white/40 mx-4"></span>
+            Sustainable
           </h1>
+        </div>
           <Button 
             onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="bg-[#1A1A1A] text-white px-[3vw] py-[2vh] text-[1.2rem] tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-colors duration-300"
+            className="bg-white text-[#1A1A1A] px-[3vw] py-[2vh] text-[1.2rem] tracking-[0.2em] uppercase hover:bg-[#1A1A1A] hover:text-white transition-colors"
           >
             Discover Collection
           </Button>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <section id="ourstory" className="py-[15vh] px-[5vw]">
+      {/* --- OUR STORY --- */}
+      <section id="ourstory" className="py-[15vh] px-[5vw] bg-[#FDFBF7]">
         <div className="max-w-[90vw] mx-auto text-center">
-          <span className="text-[#8B7355] text-sm font-bold tracking-[0.2em] uppercase mb-6 block">About Us</span>
-          <h2 className="font-playfair text-[5vw] leading-[1.1] mb-12 text-[#1A1A1A]">Our Story</h2>
+          <span className="text-[#8B7355] text-sm font-bold tracking-[0.2em] uppercase mb-6 block">Our Heritage</span>
+          <h2 className="font-playfair text-[5vw] leading-[1.1] mb-12 text-[#1A1A1A]">A Mizo Wildflower</h2>
           <p className="text-[2vw] leading-relaxed text-[#1A1A1A] font-playfair italic max-w-4xl mx-auto">
-            ""Lélen A Mizo wildflower symbolises my desire to promote not just my vibrant Mizol culture, but also sustainability and eco-friendly products. By starting this brand hope to transform how the fashion industry operates and how people live by introducing eco and sustainable products. I also hope to help and promote the livelihood of our local artisans by elevating their talented Mizo craftsmanship."
+            "Lélen symbolises my desire to promote not just our vibrant Mizo culture, but also sustainability. We hope to transform how the fashion industry operates by elevating the talented craftsmanship of our local artisans."
           </p>
         </div>
       </section>
 
-      {/* Lookbook Section */}
-      <section className="py-[10vh] bg-white">
+      {/* --- LOOKBOOK (SIDE-SCROLLING) --- */}
+      <section className="py-[10vh] bg-[#F4F0E8]">
         <div className="px-[5vw]">
           <div className="text-center mb-[8vh]">
              <h2 className="font-playfair text-[4vw] text-[#1A1A1A]">Lookbook '26</h2>
+             <p className="text-sm uppercase tracking-widest text-[#8B7355] mt-2">Scroll to explore →</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[2vw]">
+          <div className="flex overflow-x-auto pb-10 space-x-[2vw] scrollbar-hide snap-x">
             {lookbookImages.map((img, i) => (
-              <div key={i} className="aspect-[3/4] relative overflow-hidden rounded-[2rem] group cursor-pointer">
-                <img src={img} alt="Lookbook" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-500"></div>
+              <div key={i} className="min-w-[70vw] md:min-w-[40vw] lg:min-w-[25vw] aspect-[3/4] relative overflow-hidden rounded-[2rem] snap-center group shadow-md">
+                <img src={img} alt="Lookbook entry" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all duration-500"></div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Journal Section */}
-      <section id="journal" className="py-[15vh] px-[5vw] bg-[#F9F9F7]">
+      {/* --- ARTISAN JOURNAL --- */}
+      <section id="journal" className="py-[15vh] px-[5vw] bg-[#FDFBF7]">
         <div className="grid lg:grid-cols-2 gap-[5vw] items-center">
-          <div className="h-[70vh] rounded-[2.5rem] overflow-hidden">
-            <img src="https://www.instagram.com/p/DR92tIIE-Dx/?img_index=1" alt="Weaving" className="w-full h-full object-cover" />
+          <div className="h-[70vh] rounded-[2.5rem] overflow-hidden shadow-lg">
+            <img src="./j.jpg" alt="Weaving close-up" className="w-full h-full object-cover" />
           </div>
           <div className="space-y-[3vh]">
-            <h2 className="font-playfair text-[5vw] text-[#1A1A1A] leading-[1] mt-8 lg:mt-0">The Art of <br/>Handloom</h2>
+            <h2 className="font-playfair text-[5vw] text-[#1A1A1A] leading-[1]">The Art of <br/>Handloom</h2>
             <p className="text-[1.5vw] text-gray-600 leading-relaxed max-w-xl min-text-[16px]">
-              Discover the intricate process behind our skjfsdnvlvkjshdf;klsadjv;lk asjd;fijsd;alf.
+              Our pieces are more than just clothes; they are a legacy woven with dedication and ancient techniques passed down through generations of Mizo weavers.
             </p>
             <a href="#" className="inline-flex items-center text-[1.2vw] text-[#1A1A1A] font-medium border-b border-black pb-1 hover:text-[#8B7355] hover:border-[#8B7355] transition-colors">
-              Read the Story <ChevronRight className="ml-2 w-[1.5vw] h-[1.5vw]" />
+              The Process <ChevronRight className="ml-2 w-[1.5vw] h-[1.5vw]" />
             </a>
           </div>
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section id="collections" className="py-[15vh] px-[5vw] bg-white">
+      {/* --- PRODUCT GRID --- */}
+      <section id="collections" className="py-[15vh] px-[5vw] bg-[#F4F0E8]">
         <div className="w-full">
           <h2 className="font-playfair text-[5vw] text-center mb-[10vh] text-[#1A1A1A]">Our Collections</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-[3vw] gap-y-[8vh]">
             {products.map((product) => (
               <div key={product.id} className="group cursor-pointer">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] mb-6">
+                <div className="relative aspect-[3/4] overflow-hidden rounded-[2rem] mb-6 shadow-sm">
                   <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="space-y-2">
                   <h3 className="font-playfair text-[2vw] text-[#1A1A1A] leading-tight">{product.name}</h3>
-                  <p className="text-[1.2vw] text-gray-500 font-sans">{product.price}</p>
+                  <p className="text-[1.2vw] text-gray-500 font-sans tracking-widest">{product.price}</p>
                 </div>
-                <Button onClick={() => handleWhatsAppInquiry(product.name, product.price)} className="mt-6 w-full bg-transparent border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white py-[2vh] rounded-full text-sm uppercase tracking-widest">
+                <Button onClick={() => handleWhatsAppInquiry(product.name, product.price)} className="mt-6 w-full bg-transparent border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white py-[2vh] rounded-full text-sm uppercase tracking-widest font-bold">
                   Inquire via WhatsApp
                 </Button>
               </div>
@@ -171,27 +191,27 @@ export default function LabelLelenWebsite() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* --- FOOTER --- */}
       <footer id="contact" className="bg-[#2C241B] text-[#F5F1E8] py-[10vh] px-[5vw]">
         <div className="grid md:grid-cols-12 gap-[5vw]">
           <div className="md:col-span-5 space-y-8">
-            <div className="text-[3vw] font-playfair font-bold">LABEL LELEN</div>
-             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md">Sustainable mizo sdfjhasdknm,cxnvlkjshdfiowef;lksdanf;kjlsadhf.</p>
+            <div className="text-[3vw] font-playfair font-bold uppercase">LABEL LELEN</div>
+             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md italic">Sustainable Mizo craftsmanship. Homegrown in Mizoram.</p>
           </div>
           
           <div className="md:col-span-4 space-y-8">
-             <h3 className="font-playfair text-[2vw]">Newsletter</h3>
+             <h3 className="font-playfair text-[2vw]">Stay Connected</h3>
              <div className="flex flex-col gap-6">
-               <Input type="email" placeholder="Enter your email" className="text-white border-white/20 focus:border-white" />
-               <Button className="bg-[#8B7355] text-white py-4 w-40 rounded-full tracking-widest uppercase text-xs hover:bg-[#9C8466]">Subscribe</Button>
+               <Input type="email" placeholder="Enter your email" className="text-white border-white/20 focus:border-[#8B7355]" />
+               <Button className="bg-[#8B7355] text-white py-4 w-48 rounded-full tracking-widest uppercase text-xs hover:bg-[#9C8466]">Join the circle</Button>
              </div>
           </div>
 
           <div className="md:col-span-3 space-y-8">
-            <h3 className="font-playfair text-[2vw]">Contact</h3>
+            <h3 className="font-playfair text-[2vw]">Visit Us</h3>
             <div className="space-y-4 text-[#D4C5B0] text-lg">
-               <p>Khatla kawn ,RTS building. </p>
-               <p>Pizza hut opposite. Azl , MZ</p>
+               <p>Khatla Kawn, RTS Building.</p>
+               <p>Opposite Pizza Hut. Aizawl, MZ</p>
                <p>+91 9362223522</p>
                <div className="flex space-x-6 pt-4">
                  {[Instagram, Facebook, Twitter, Mail].map((Icon, i) => <a key={i} href="#" className="text-white hover:text-[#8B7355] transition-colors"><Icon size={24} /></a>)}
@@ -206,4 +226,3 @@ export default function LabelLelenWebsite() {
     </div>
   )
 }
-//change

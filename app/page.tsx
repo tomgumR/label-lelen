@@ -90,8 +90,8 @@ export default function LabelLelenWebsite() {
           <div className="absolute inset-0 bg-black/10"></div>
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <h1 className="font-playfair text-[8vw] leading-[0.85] font-bold text-white mb-[4vh] drop-shadow-xl w-full">
-            WEAVING STORIES, <br /> ONE STITCH AT A TIME
+          <h1 className="font-playfair text-[2vw] leading-[0.85] font-bold text-white mb-[4vh] drop-shadow-xl w-full">
+            , <br /> •Ethical Mizo brand •Homegrown•Handcrafted•Sustainable •
           </h1>
           <Button 
             onClick={() => document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' })} 

@@ -139,7 +139,7 @@ export default function LabelLelenWebsite() {
           <div className="space-y-[3vh]">
             <h2 className="font-playfair text-[5vw] text-[#1A1A1A] leading-[1] mt-8 lg:mt-0">The Art of <br/>Handloom</h2>
             <p className="text-[1.5vw] text-gray-600 leading-relaxed max-w-xl min-text-[16px]">
-              Discover the intricate process behind our handwoven textiles. From the rhythmic dance of the loom to the careful selection of natural dyes, each saree embodies centuries of tradition.
+              Discover the intricate process behind our skjfsdnvlvkjshdf;klsadjv;lk asjd;fijsd;alf.
             </p>
             <a href="#" className="inline-flex items-center text-[1.2vw] text-[#1A1A1A] font-medium border-b border-black pb-1 hover:text-[#8B7355] hover:border-[#8B7355] transition-colors">
               Read the Story <ChevronRight className="ml-2 w-[1.5vw] h-[1.5vw]" />
@@ -176,7 +176,7 @@ export default function LabelLelenWebsite() {
         <div className="grid md:grid-cols-12 gap-[5vw]">
           <div className="md:col-span-5 space-y-8">
             <div className="text-[3vw] font-playfair font-bold">LABEL LELEN</div>
-             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md">Sustainable luxury celebrating the heritage of Indian handloom. Crafted with conscience, worn with pride.</p>
+             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md">Sustainable mizo sdfjhasdknm,cxnvlkjshdfiowef;lksdanf;kjlsadhf.</p>
           </div>
           
           <div className="md:col-span-4 space-y-8">

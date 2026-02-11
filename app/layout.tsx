@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Label Lelen - Sustainable Indian Fashion",
-  description: "Weaving stories, one stitch at a time.",
+  description: "•Ethical Mizo brand •Homegrown•Handcrafted•Sustainable •",
 };
 
 export default function RootLayout({

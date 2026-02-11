@@ -34,19 +34,19 @@ export default function LabelLelenWebsite() {
   }, [])
 
   const products = [
-    { id: 1, name: 'Ruby Heritage Saree', price: '₹12,500', image: 'https://images.unsplash.com/photo-1727430228383-aa1fb59db8bf?crop=entropy&cs=srgb&fm=jpg&q=85&w=800' },
-    { id: 2, name: 'Sunshine Elegance', price: '₹8,900', image: 'https://images.unsplash.com/photo-1756483510802-0acac24ab4e8?crop=entropy&cs=srgb&fm=jpg&q=85&w=800' },
-    { id: 3, name: 'Azure Dreams Saree', price: '₹15,200', image: 'https://images.unsplash.com/photo-1692992193981-d3d92fabd9cb?crop=entropy&cs=srgb&fm=jpg&q=85&w=800' },
-    { id: 4, name: 'Crimson Royale', price: '₹11,800', image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?crop=entropy&cs=srgb&fm=jpg&q=85&w=800' },
-    { id: 5, name: 'Golden Lotus', price: '₹9,500', image: 'https://images.pexels.com/photos/31540070/pexels-photo-31540070.jpeg?w=800' },
-    { id: 6, name: 'Emerald Tradition', price: '₹13,400', image: 'https://images.unsplash.com/photo-1756483510900-ec43edbafb45?crop=entropy&cs=srgb&fm=jpg&q=85&w=800' }
+    { id: 1, name: 'Ruby Heritage Saree', price: '₹', image: './d.jpg' },
+    { id: 2, name: 'Sunshine Elegance', price: '₹', image: './s.jpg' },
+    { id: 3, name: 'Azure Dreams Saree', price: '₹', image: './a.jpg' },
+    { id: 4, name: 'Crimson Royale', price: '₹', image: './c.jpg' },
+    { id: 5, name: 'Golden Lotus', price: '₹', image: './f.jpg' },
+    { id: 6, name: 'Emerald Tradition', price: '₹', image: './e.jpg' }
   ]
 
   const lookbookImages = [
-    'https://images.unsplash.com/photo-1610189337543-1c5d8e64f574?w=800&q=85',
-    'https://images.unsplash.com/photo-1610189000544-1f0885c4bbeb?w=800&q=85',
-    'https://images.unsplash.com/photo-1610189338175-0782dfdb0c04?w=800&q=85',
-    'https://images.unsplash.com/photo-1610189338344-f3ce0d0f6d06?w=800&q=85'
+    './b.jpg',
+    './j.jpg',
+    './i.jpg',
+    './h.jpg'
   ]
 
   const handleWhatsAppInquiry = (productName: string, price: string) => {
@@ -86,7 +86,7 @@ export default function LabelLelenWebsite() {
       {/* Hero Section - FLUID TYPOGRAPHY */}
       <section className="relative h-screen w-full overflow-hidden">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1724433530860-f094e39b64e7?w=1920&q=85" alt="Hero" className="w-full h-full object-cover" />
+          <img src="./h.jpg" alt="Hero" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/10"></div>
         </div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
@@ -108,7 +108,7 @@ export default function LabelLelenWebsite() {
           <span className="text-[#8B7355] text-sm font-bold tracking-[0.2em] uppercase mb-6 block">About Us</span>
           <h2 className="font-playfair text-[5vw] leading-[1.1] mb-12 text-[#1A1A1A]">Our Story</h2>
           <p className="text-[2vw] leading-relaxed text-[#1A1A1A] font-playfair italic max-w-4xl mx-auto">
-            "Label Lelen celebrates the timeless art of Indian handloom weaving. Each piece tells a story of sustainable craftsmanship, honoring traditional techniques passed down through generations."
+            ""Lélen A Mizo wildflower symbolises my desire to promote not just my vibrant Mizol culture, but also sustainability and eco-friendly products. By starting this brand hope to transform how the fashion industry operates and how people live by introducing eco and sustainable products. I also hope to help and promote the livelihood of our local artisans by elevating their talented Mizo craftsmanship."
           </p>
         </div>
       </section>
@@ -190,9 +190,9 @@ export default function LabelLelenWebsite() {
           <div className="md:col-span-3 space-y-8">
             <h3 className="font-playfair text-[2vw]">Contact</h3>
             <div className="space-y-4 text-[#D4C5B0] text-lg">
-               <p>Bangalore, India</p>
-               <p>hello@labellelen.com</p>
-               <p>+91 98765 43210</p>
+               <p>Khatla kawn ,RTS building. </p>
+               <p>Pizza hut opposite. Azl , MZ</p>
+               <p>+91 9362223522</p>
                <div className="flex space-x-6 pt-4">
                  {[Instagram, Facebook, Twitter, Mail].map((Icon, i) => <a key={i} href="#" className="text-white hover:text-[#8B7355] transition-colors"><Icon size={24} /></a>)}
                </div>

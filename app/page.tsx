@@ -60,10 +60,10 @@ export default function LabelLelenWebsite() {
           - Changed scrolled state to a deeper parchment tint bg-[#FDFBF7]/95.
           - Removed 'backdrop-blur' as requested.
       */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FDFBF7]/95 py-4 shadow-md' : 'bg-black/25 py-6 border-b border-white/5'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FDFBF7]/95 py-4 shadow-md' : 'bg-white/0 py-6 border-b border-white/5'}`}>
         <div className="w-full px-[5vw] flex items-center justify-between">
           {/* Logo color adapts to the background tint */}
-          <div className={`text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight z-50 relative uppercase ${isScrolled ? 'text-[#1A1A1A]' : 'text-white'}`}>
+          <div className={`text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight z-50 relative uppercase ${isScrolled ? 'text-[#1A1A1A]' : 'text-[#B5A482]'}`}>
             LABEL LELEN
           </div>
           
@@ -72,7 +72,7 @@ export default function LabelLelenWebsite() {
               <a 
                 key={item} 
                 href={`#${item.toLowerCase().replace(' ', '')}`} 
-                className={`transition-colors text-[1vw] uppercase tracking-widest font-medium ${isScrolled ? 'text-[#1A1A1A] hover:text-[#8B7355]' : 'text-white/90 hover:text-white'}`}
+                className={`transition-colors text-[1vw] uppercase tracking-widest font-medium ${isScrolled ? 'text-[#1A1A1A] hover:text-[#8B7355]' : 'text-[#B5A482] hover:text-white'}`}
               >
                 {item}
               </a>

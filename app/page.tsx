@@ -134,7 +134,7 @@ export default function LabelLelenWebsite() {
       <section id="journal" className="py-[15vh] px-[5vw] bg-[#F9F9F7]">
         <div className="grid lg:grid-cols-2 gap-[5vw] items-center">
           <div className="h-[70vh] rounded-[2.5rem] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1640292343595-889db1c8262e?w=1200&q=85" alt="Weaving" className="w-full h-full object-cover" />
+            <img src="https://www.instagram.com/p/DR92tIIE-Dx/?img_index=1" alt="Weaving" className="w-full h-full object-cover" />
           </div>
           <div className="space-y-[3vh]">
             <h2 className="font-playfair text-[5vw] text-[#1A1A1A] leading-[1] mt-8 lg:mt-0">The Art of <br/>Handloom</h2>

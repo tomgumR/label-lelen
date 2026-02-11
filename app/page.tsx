@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Menu, X, Instagram, Facebook, Twitter, Mail, ChevronRight } from 'lucide-react'
+import { Menu, X, Instagram, Mail, ChevronRight, Linkedin } from 'lucide-react'
 
 // --- REUSABLE UI COMPONENTS ---
 const Button = ({ children, className, onClick }: { children: React.ReactNode; className?: string; onClick?: () => void }) => (
@@ -55,9 +55,7 @@ export default function LabelLelenWebsite() {
   return (
     <div className="min-h-screen bg-[#FDFBF7] text-[#1A1A1A] font-sans overflow-x-hidden">
       
-      {/* --- NAVIGATION BAR --- 
-          - Greyish border-b removed to clean up the hero view.
-      */}
+      {/* --- NAVIGATION BAR --- */}
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#FDFBF7]/95 py-4 shadow-md' : 'bg-white/0 py-6'}`}>
         <div className="w-full px-[5vw] flex items-center justify-between">
           <div className={`text-[4vw] min-text-[24px] font-playfair font-bold tracking-tight z-50 relative uppercase ${isScrolled ? 'text-[#1A1A1A]' : 'text-[#B5A482]'}`}>
@@ -188,49 +186,58 @@ export default function LabelLelenWebsite() {
 
       {/* --- FOOTER --- */}
       <footer id="contact" className="bg-[#2C241B] text-[#F5F1E8] py-[10vh] px-[5vw]">
-        <div className="grid md:grid-cols-12 gap-[5vw]">
-          <div className="md:col-span-4 space-y-8">
-            <div className="text-[3vw] font-playfair font-bold uppercase">LABEL LELEN</div>
-             <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md italic">
-               Sustainable Mizo craftsmanship. Homegrown in Mizoram.
-             </p>
-             <div className="flex space-x-6 pt-4">
-               <a href="https://www.instagram.com/label_lelen/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#8B7355] transition-colors">
-                 <Instagram size={50} />
-               </a>
-               <a href="#" className="text-white hover:text-[#8B7355] transition-colors"><Facebook size={24} /></a>
-               <a href="mailto:labellelen@gmail.com" className="text-white hover:text-[#8B7355] transition-colors"><Mail size={24} /></a>
-             </div>
-          </div>
-          
-          <div className="md:col-span-5 space-y-6">
-             <h3 className="font-playfair text-[2vw]">Find Us</h3>
-             <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden shadow-lg border border-white/10">
-               <iframe 
-                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.735878415259!2d92.7143230758994!3d23.721105089886295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374d9524a918d449%3A0xbc770642127903a5!2sRts%20D'Decor%20Store%20-%20Aizawl%20-%20Mizoram!5e0!3m2!1sen!2sin!4v1707254000000!5m2!1sen!2sin" 
-                 width="100%" 
-                 height="100%" 
-                 style={{ border: 0 }} 
-                 allowFullScreen 
-                 loading="lazy" 
-                 referrerPolicy="no-referrer-when-downgrade"
-               ></iframe>
-             </div>
-          </div>
+          <div className="grid md:grid-cols-12 gap-[5vw]">
+            <div className="md:col-span-4 space-y-8">
+              <div className="text-[3vw] font-playfair font-bold uppercase">LABEL LELEN</div>
+              <p className="text-[#D4C5B0] text-[1.2vw] leading-relaxed max-w-md italic">
+                Sustainable Mizo craftsmanship. Homegrown in Mizoram.
+              </p>
+              <div className="flex space-x-6 pt-4 items-center">
+                {/* Instagram Icon (Size 50) */}
+                <a href="https://www.instagram.com/label_lelen/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#8B7355] transition-colors">
+                  <Instagram size={50} />
+                </a>
+                
+                {/* LinkedIn Icon (Size 50) - Replaced Facebook */}
+                <a href="your-linkedin-link-here" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#8B7355] transition-colors">
+                  <Linkedin size={50} />
+                </a>
+                
+                {/* Mail Icon (Size 50) */}
+                <a href="mailto:labellelen2022@gmail.com" className="text-white hover:text-[#8B7355] transition-colors">
+                  <Mail size={50} />
+                </a>
+              </div>
+            </div>
+            
+            <div className="md:col-span-5 space-y-6">
+              <h3 className="font-playfair text-[2vw]">Find Us</h3>
+              <div className="w-full h-[200px] rounded-[1.5rem] overflow-hidden shadow-lg border border-white/10">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.735878415259!2d92.7143230758994!3d23.721105089886295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374d9524a918d449%3A0xbc770642127903a5!2sRts%20D&#39;Decor%20Store%20-%20Aizawl%20-%20Mizoram!5e0!3m2!1sen!2sin!4v1707254000000!5m2!1sen!2sin"
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
 
-          <div className="md:col-span-3 space-y-8">
-            <h3 className="font-playfair text-[2vw]">Visit Us</h3>
-            <div className="space-y-4 text-[#D4C5B0] text-lg">
-               <p className="leading-tight">Khatla Kawn, RTS Building.</p>
-               <p className="leading-tight">Opposite Pizza Hut. Aizawl, MZ</p>
-               <p className="text-white font-medium">+91 9362223522</p>
+            <div className="md:col-span-3 space-y-8">
+              <h3 className="font-playfair text-[2vw]">Visit Us</h3>
+              <div className="space-y-4 text-[#D4C5B0] text-lg">
+                <p className="leading-tight">Khatla Kawn, RTS Building.</p>
+                <p className="leading-tight">Opposite Pizza Hut. Aizawl, MZ</p>
+                <p className="text-white font-medium">+91 9362223522</p>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-[10vh] pt-8 border-t border-white/10 text-center text-[#D4C5B0] text-sm tracking-widest uppercase">
-           © 2026 Label Lelen. All rights reserved.
-        </div>
+          <div className="mt-[10vh] pt-8 border-t border-white/10 text-center text-[#D4C5B0] text-sm tracking-widest uppercase">
+            © 2026 Label Lelen. All rights reserved.
+          </div>
       </footer>
     </div>
   )
